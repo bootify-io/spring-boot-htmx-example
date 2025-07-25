@@ -1,0 +1,39 @@
+plugins {
+    id 'org.springframework.boot' version '3.5.3'
+    id 'io.spring.dependency-management' version '1.1.7'
+    id 'java'
+}
+
+group = 'io.bootify'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+bootRun {
+    environment SPRING_PROFILES_ACTIVE: environment.SPRING_PROFILES_ACTIVE ?: 'local'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-validation')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    runtimeOnly('org.hsqldb:hsqldb')
+    implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
+    implementation('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect')
+    implementation('org.webjars:bootstrap:5.3.7')
+    implementation('org.webjars.npm:htmx.org:2.0.4')
+    implementation('org.webjars.npm:flatpickr:4.6.13')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+}
