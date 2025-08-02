@@ -12,7 +12,7 @@ public class ServletConfig {
 
     @Bean
     public ServletContextInitializer servletContextInitializer() {
-        // prevent Thymeleaf from appending the session id to resources
+        // don't append the session id to resources
         return servletContext -> servletContext.setSessionTrackingModes(Set.of(SessionTrackingMode.COOKIE));
     }
 
