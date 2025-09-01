@@ -42,7 +42,9 @@ public class ContactService {
     }
 
     public void delete(final Long id) {
-        contactRepository.deleteById(id);
+        final Contact contact = contactRepository.findById(id)
+                .orElseThrow(NotFoundException::new);
+        contactRepository.delete(contact);
     }
 
     private ContactDTO mapToDTO(final Contact contact, final ContactDTO contactDTO) {
