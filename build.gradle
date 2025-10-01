@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '3.5.5'
+    id 'org.springframework.boot' version '3.5.6'
     id 'io.spring.dependency-management' version '1.1.7'
     id 'java'
 }
@@ -28,8 +28,8 @@ dependencies {
     runtimeOnly('org.hsqldb:hsqldb')
     implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
     implementation('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect')
-    implementation('org.webjars:bootstrap:5.3.7')
-    implementation('org.webjars.npm:htmx.org:2.0.6')
+    implementation('org.webjars:bootstrap:5.3.8')
+    implementation('org.webjars.npm:htmx.org:2.0.7')
     implementation('org.webjars.npm:flatpickr:4.6.13')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
