@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: htmx
   datasource:
     url: ${JDBC_DATABASE_URL:jdbc:hsqldb:mem:htmx}
     username: ${JDBC_DATABASE_USERNAME:sa}
